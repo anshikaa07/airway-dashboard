@@ -92,3 +92,8 @@ Express REST API
 React useApi hook (polls every 5-10s)
    ↓
 Dashboard auto-updates
+---
+
+## Author
+
+Anshika Kumar
