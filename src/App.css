@@ -1,0 +1,19 @@
+/* App.css — Top-level layout */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+}
+
+.main-content {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .main-content { padding: 14px 14px; gap: 12px; }
+}

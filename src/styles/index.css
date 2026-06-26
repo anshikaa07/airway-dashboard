@@ -1,0 +1,174 @@
+/* ============================================================
+   GLOBAL STYLES & CSS VARIABLES
+   Airway Traffic Decision Dashboard
+   ============================================================ */
+
+/* --- CSS Custom Properties (Design Tokens) --- */
+:root {
+  /* Background layers */
+  --bg-primary:    #0a0e1a;
+  --bg-secondary:  #111827;
+  --bg-tertiary:   #1a2235;
+  --bg-card:       #1e2d42;
+
+  /* Brand accent */
+  --accent:        #3b82f6;
+  --accent-light:  #60a5fa;
+  --accent-pale:   #93c5fd;
+
+  /* Semantic colors */
+  --color-green:   #10b981;
+  --color-green-bg: rgba(16, 185, 129, 0.15);
+  --color-red:     #ef4444;
+  --color-red-bg:  rgba(239, 68, 68, 0.15);
+  --color-amber:   #f59e0b;
+  --color-amber-bg: rgba(245, 158, 11, 0.15);
+  --color-purple:  #8b5cf6;
+  --color-purple-bg: rgba(139, 92, 246, 0.15);
+  --color-cyan:    #06b6d4;
+
+  /* Text */
+  --text-primary:   #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted:     #64748b;
+
+  /* Borders */
+  --border:         rgba(59, 130, 246, 0.15);
+  --border-strong:  rgba(59, 130, 246, 0.30);
+
+  /* Typography */
+  --font-ui:   'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Spacing */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  32px;
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* Shadows */
+  --shadow-panel: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-glow:  0 0 20px rgba(59, 130, 246, 0.12);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+}
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Scrollbar Styling --- */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-light);
+}
+
+/* --- Typography Utilities --- */
+.font-mono {
+  font-family: var(--font-mono);
+}
+.text-primary   { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted     { color: var(--text-muted); }
+.text-accent    { color: var(--accent-light); }
+.text-green     { color: var(--color-green); }
+.text-red       { color: var(--color-red); }
+.text-amber     { color: var(--color-amber); }
+
+/* --- Layout Utilities --- */
+.flex           { display: flex; }
+.flex-center    { display: flex; align-items: center; justify-content: center; }
+.flex-between   { display: flex; align-items: center; justify-content: space-between; }
+.flex-col       { display: flex; flex-direction: column; }
+.gap-xs         { gap: var(--space-xs); }
+.gap-sm         { gap: var(--space-sm); }
+.gap-md         { gap: var(--space-md); }
+
+/* --- Animation Keyframes (shared across components) --- */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.25); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes plane-move {
+  0%   { transform: translateX(0)  translateY(0); }
+  50%  { transform: translateX(20px) translateY(-10px); }
+  100% { transform: translateX(40px) translateY(5px); }
+}
+
+/* --- Accessibility --- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- Responsive breakpoints (use in component CSS) ---
+   sm:  640px
+   md:  768px
+   lg:  1024px
+   xl:  1280px
+   2xl: 1536px
+*/

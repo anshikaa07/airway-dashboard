@@ -1,0 +1,46 @@
+/* FlightMonitor.css */
+.flight-scroll { max-height: 260px; }
+
+.flight-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.flight-table th {
+  text-align: left;
+  color: var(--text-muted);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0 8px 8px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--border);
+}
+.flight-table td {
+  padding: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  vertical-align: middle;
+}
+.flight-table tr:last-child td { border-bottom: none; }
+.flight-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+.flight-id {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+.flight-route { color: var(--text-secondary); font-size: 11px; }
+.flight-delay { font-size: 11px; color: var(--text-muted); }
+.flight-delay.has-delay { color: var(--color-amber); }
+.flight-eta { font-size: 11px; font-family: var(--font-mono); color: var(--text-secondary); }
+
+/* DB connection status indicators */
+.db-status {
+  font-size: 11px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+.db-status.loading { color: var(--accent-light); background: rgba(59,130,246,0.1); }
+.db-status.error   { color: var(--color-red);    background: rgba(239,68,68,0.1);  }

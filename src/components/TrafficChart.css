@@ -1,0 +1,6 @@
+/* TrafficChart.css */
+.traffic-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
