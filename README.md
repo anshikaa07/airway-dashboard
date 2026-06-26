@@ -95,6 +95,6 @@ Dashboard auto-updates
 ```
 ---
 
-##Author
+## Author
 
 Anshika Kumar
